@@ -10,6 +10,18 @@ function getMoveName(argMoveId){
       printMessage('Nie znam ruchu o id ' + argMoveId + '.');
       return 'nieznany ruch';
     }
+    if(argMoveId == 2){
+      return 'papier';
+      } else {
+      printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+      return 'nieznany ruch';
+    }
+    if(argMoveId == 3){
+      return 'nożyce';
+      } else {
+        printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+        return 'nieznany ruch';
+      }
   }
   
  
@@ -47,11 +59,22 @@ function console.log('moves:', argComputerMove, argPlayerMove);
   displayResult(argComputerMove, argPlayerMove)
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   
+  
   if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
-      printMessage('Ty wygrywasz!');
-  } else {
-   printMessage('Tym razem przegrywasz :(');
-  }
+    printMessage('Ty wygrywasz!');
+} else {
+ printMessage('Tym razem przegrywasz :(');
+}
+if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+    printMessage('Ty wygrywasz!');
+} else {
+ printMessage('Tym razem przegrywasz :(');
+}
+if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+    printMessage('Ty wygrywasz!');
+} else {
+ printMessage('Tym razem przegrywasz :(');
+}
   }
 
 
