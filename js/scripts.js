@@ -1,34 +1,21 @@
-
 function playGame
     (playerInput) {
-
-    if (testButton == 1)
-        printMessage('Wybrałeś kamień')
-    {
-      if (testButton == 2)
-            printMessage('Papier')
-    }
-     if (testButton == 3) {
-
-
-        printMessage('Nożyczki')
+    if (buttonStone == 1) {
+        return 'kamień';
+    } else if (buttonPapier == 2) {
+        return 'papier';
+    } else if (buttonScissors == 3) {
+        return 'nożyce';
     }
 
-    let testButton = document.getElementById('test-button');
-
-    testButton.addEventListener('click', playGame);
-
-
-
-
-
-
-
+    function clearMessages()
 
 
     let randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log('Wylosowana liczba to: ' + randomNumber);
+
+
 
     function getMoveName(argMoveId) {
         if (argMoveId == 1) {
@@ -57,7 +44,7 @@ function playGame
     printMessage('Mój ruch to: ' + argComputerMove);
 
     /*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
-    
+
     console.log('Gracz wpisał: ' + playerInput);
 
     let argPlayerMove = getMoveName(randomNumber);;
@@ -102,5 +89,27 @@ function playGame
       if( computerMove == 'papier' && playerMove == 'kamień'){
         printMessage('Komputer wygrywa!');
       }*/
-}
+    function buttonStone() {
+        playGame(1);
+    }
 
+    let stoneButton = document.getElementById('stone-button');
+
+    stoneButton.addEventListener('click', buttonStone);
+
+    function buttonPapier() {
+        playGame(2);
+    }
+
+    let papierButton = document.getElementById('papier-button');
+
+    papierButton.addEventListener('click', buttonPapier);
+
+    function buttonScissors() {
+        playGame(3);
+    }
+
+    let scissorsButton = document.getElementById('scissors-button');
+
+    scissorsButton.addEventListener('click', buttonScissors);
+}
